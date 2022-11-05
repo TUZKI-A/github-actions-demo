@@ -1,4 +1,4 @@
-﻿name: Build and Deploy
+﻿name: Deploy to GitHub Pages
 on: # 监听 master 分支上的 push 事件
   push:
     branches:
@@ -18,7 +18,7 @@ jobs:
           npm run build
 
       - name: Deploy # 将打包内容发布到 github page
-        uses: JamesIves/github-pages-deploy-action@3.7.1 # 使用别人写好的 actions
+        uses: JamesIves/github-pages-deploy-action@v4.4.1 # 使用别人写好的 actions
         with:  # 自定义环境变量
           ACCESS_TOKEN: ${{ secrets.TEST_A_B }}
           BRANCH: master
